@@ -19,11 +19,58 @@
         <div class="nav-header">
             <div class="container">
                 <div class="log-box">
-                    <a hrev="javascript:void(0)"></a>
+                    <a href="javascript:void(0)"></a>
                 </div>
                 <div class="nav-menu">
                     <div class="menu-item">
                         <span>小米手机</span>
+                        <div class="children">
+                            <ul>
+                                <li>
+                                    <div class="pro-img">
+                                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png" />
+                                    </div>
+                                    <div class="pro-name">小米CC9e</div>
+                                    <div class="pro-price">￥1299.00元</div>
+                                </li>
+                                <li>
+                                    <div class="pro-img">
+                                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png" />
+                                    </div>
+                                    <div class="pro-name">小米CC9e</div>
+                                    <div class="pro-price">￥1299.00元</div>
+                                </li>
+                                <li>
+                                    <div class="pro-img">
+                                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png" />
+                                    </div>
+                                    <div class="pro-name">小米CC9e</div>
+                                    <div class="pro-price">￥1299.00元</div>
+                                </li>
+                                <li>
+                                    <div class="pro-img">
+                                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png" />
+                                    </div>
+                                    <div class="pro-name">小米CC9e</div>
+                                    <div class="pro-price">￥1299.00元</div>
+                                </li>
+                                <li>
+                                    <div class="pro-img">
+                                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png" />
+                                    </div>
+                                    <div class="pro-name">小米CC9e</div>
+                                    <div class="pro-price">￥1299.00元</div>
+                                </li>
+                                <li>
+                                    <div class="pro-img">
+                                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png" />
+                                    </div>
+                                    <div class="pro-name">小米CC9e</div>
+                                    <div class="pro-price">￥1299.00元</div>
+                                </li>
+                                
+                            </ul>
+                        </div>
                     </div>
                     <div class="menu-item">
                         <span>RedMi红米</span>
@@ -85,28 +132,34 @@ export default {
             width:55px;
             height:55px;
             overflow: hidden;
+            margin-top:26px;
             a{
-                width:110px;
+                width:115px;
                 height:55px;
                 display: block;
+                transition: all 0.1s;
+                &:hover{
+                    transform: translateX(-50%);
+                    
+                }
+                &:before{
+                    display: inline-block;
+                    content:"";
+                    width:55px;
+                    height:55px;
+                    background:url("/imgs/mi-home.png");  
+                }
+                &:after{
+                    display: inline-block;
+                    content:"";
+                    width:55px;
+                    height:55px;
+                    background:url("/imgs/mi-logo.png"); 
+                }
             }
-            &:before{
-                display: inline-block;
-                content:"";
-                width:55px;
-                height:55px;
-                background:url("/imgs/mi-home.png");  
-            }
-            &:after{
-                display: inline-block;
-                content:"";
-                width:55px;
-                height:55px;
-                background:url("/imgs/mi-logo.png"); 
-            }
-            &:hover{
-                transform: translateX(-50%);
-            }
+            
+            
+            
         }
         
     }
@@ -115,13 +168,65 @@ export default {
         .menu-item{
             padding:0 20px;
             font-size:16px;
-            line-height:112px;
             font-weight: bold;
+            position:relative;
             span{
-                cursor:pointer  
+                cursor:pointer;
+                line-height:112px; 
             }
             &:hover{
                 color:#FF6600;
+                .children{
+                    display:block;
+                }
+            }
+            .children{
+                // display:none;
+                position:absolute;
+                left:0;
+                top:120px;
+                box-shadow: 0px 7px 6px 0px rgba(0, 0, 0, 0.11);
+                border-top: 1px solid #E5E5E5;
+                padding-bottom:30px;
+                display: none;
+                ul {
+                    display: flex;
+                    li{
+                        .pro-img{
+                            padding-top:30px;
+                            padding-bottom:30px;
+                            text-align: center;
+                            img{
+                                height:110px;
+                            }
+                        }
+                        .pro-name{
+                            line-height:30px;
+                            font-size:12px;
+                            color:#333333;
+                            font-weight: bold;
+                            text-align:center;
+                            position:relative
+                        }
+                        .pro-price{
+                            color:#FF6600;
+                            text-align:center;
+                        }
+                        &:before{
+                            content:"";
+                            display:block;
+                            height:100px;
+                            width:1px;
+                            border-left:1px solid #ddd;
+                            position:absolute;
+                            right:0px;
+                            top:50%;
+                            transform-origin: 0 50%;
+                            transform: translateY(-50%);
+                            
+                        }
+                    }
+                }
             } 
         }
         
